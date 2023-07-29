@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light On Off</title>
+    <style>
+        .div{
+            display: flex;
+        }
+        .center{
+            display: block;
+            margin: 50px auto;
+            width: 20%;
+        }
+        .btn{
+            position: fixed;
+            bottom: 100px;
+            left: 40%;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            background-color: gray;
+            color: white;
+            text-shadow: 2px 2px #000;
+            letter-spacing: 2px;
+        }
+        .btn:hover{
+            background-color: rgb(99, 98, 98);
+            cursor: pointer;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body style="background-color: #000;">
+    <div class="div">
+        <img id="bulb" class="center" src="/img/bulb-off-removebg-preview.png" alt="">
+        <img id="bulb2" class="center" src="/img/bulboff-removebg-preview.png" alt="">
+    </div>
+    <button id="toggleBtn" class="btn center">Turn Off</button>
+
+    <script>
+        let btn = document.getElementById('toggleBtn');
+        let bulb = document.getElementById('bulb');
+        let bulb2 = document.getElementById('bulb2');
+        document.addEventListener('click', toggleBulb);
+
+        function toggleBulb(e){
+            // console.log(e)
+            if(btn.textContent.includes('On')){
+                bulb2.src = "img/bulboff-removebg-preview.png";
+                bulb.src = "img/bulb-off-removebg-preview.png";
+                btn.textContent = "Turn Off";
+            }else{
+                bulb2.src = "img/bulbon-removebg-preview.png";
+                bulb.src = "img/bulb-on-removebg-preview.png";
+                btn.textContent = "Turn On";
+            }
+        }
+    </script>
+</body>
+</html>
